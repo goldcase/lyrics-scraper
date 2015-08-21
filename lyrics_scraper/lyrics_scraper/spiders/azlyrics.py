@@ -5,9 +5,9 @@ import scrapy
 class AzlyricsSpider(scrapy.Spider):
     name = "azlyrics"
     allowed_domains = ["azlyrics.com"]
-    start_urls = (
-        'http://www.azlyrics.com/',
-    )
+    file = open("../urls.txt")
+    start_urls = file.read().split("\n")
+    file.close()
 
     def parse(self, response):
-        pass
+        print response
