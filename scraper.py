@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import sys
-import scrapy
 
 BASE_URL = "http://www.azlyrics.com"
 NUMBER_SEGMENT = "/19"
@@ -24,7 +23,15 @@ def get_urls():
     # Read in each normalized artist, remove newlines, and get the URL.
     for line in file:
         urls.append(build_url(line.replace("\n", "")))
+    file.close()
 
     return urls
 
-print get_urls()
+def write_urls_to_file():
+    file = open("urls.txt", "w")
+    for url in get_urls():
+        file.write(url + "\n")
+
+    file.close()
+
+write_urls_to_file()
