@@ -31,10 +31,13 @@ def scrape_urls():
     artists = get_urls()
 
     for artist in artists:
+        songs = []
         driver.get(artist)
         items = driver.find_elements_by_xpath("//div[@id='listAlbum']/a")
         for item in items:
-            print item.text
+            songs.append(item.get_attribute("href"))
+        print songs
+
 
 scrape_urls()
 

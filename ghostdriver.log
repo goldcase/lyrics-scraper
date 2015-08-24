@@ -1,6 +1,19 @@
 PhantomJS is launching GhostDriver...
-[INFO  - 2015-08-24T16:36:02.623Z] GhostDriver - Main - running on port 54599
-[INFO  - 2015-08-24T16:36:03.400Z] Session [35d22f50-4a7e-11e5-8ee9-67bdaf1fcb3e] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34","webSecurityEnabled":true}
-[INFO  - 2015-08-24T16:36:03.400Z] Session [35d22f50-4a7e-11e5-8ee9-67bdaf1fcb3e] - page.customHeaders:  - {}
-[INFO  - 2015-08-24T16:36:03.400Z] Session [35d22f50-4a7e-11e5-8ee9-67bdaf1fcb3e] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"1.9.8","driverName":"ghostdriver","driverVersion":"1.1.0","platform":"mac-10.10 (Yosemite)-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2015-08-24T16:36:03.400Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 35d22f50-4a7e-11e5-8ee9-67bdaf1fcb3e
+[INFO  - 2015-08-24T20:16:05.029Z] GhostDriver - Main - running on port 56149
+[INFO  - 2015-08-24T20:16:05.411Z] Session [f2d53200-4a9c-11e5-a278-e114aab16494] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34","webSecurityEnabled":true}
+[INFO  - 2015-08-24T20:16:05.411Z] Session [f2d53200-4a9c-11e5-a278-e114aab16494] - page.customHeaders:  - {}
+[INFO  - 2015-08-24T20:16:05.411Z] Session [f2d53200-4a9c-11e5-a278-e114aab16494] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"1.9.8","driverName":"ghostdriver","driverVersion":"1.1.0","platform":"mac-10.10 (Yosemite)-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-08-24T20:16:05.411Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: f2d53200-4a9c-11e5-a278-e114aab16494
+[ERROR - 2015-08-24T20:16:42.767Z] Session [f2d53200-4a9c-11e5-a278-e114aab16494] - page.onError - msg: TypeError: 'undefined' is not a function (evaluating 'zk.bind(mj)')
+[ERROR - 2015-08-24T20:16:42.768Z] Session [f2d53200-4a9c-11e5-a278-e114aab16494] - page.onError - stack:
+  (anonymous function) (https://www.gstatic.com/swiffy/v7.1.1/runtime.js:327)
+  (anonymous function) (https://www.gstatic.com/swiffy/v7.1.1/runtime.js:825)
+[ERROR - 2015-08-24T20:16:42.768Z] Session [f2d53200-4a9c-11e5-a278-e114aab16494] - page.onError - msg: TypeError: 'undefined' is not a constructor (evaluating 'new swiffy.Stage(document.getElementById('swiffycontainer'),
+                    swiffyObject)')
+[ERROR - 2015-08-24T20:16:42.768Z] Session [f2d53200-4a9c-11e5-a278-e114aab16494] - page.onError - stack:
+  (anonymous function) (https:[IN[INFO  - 2015-08-24T20:18:09.110Z] SessionManagerReq[ERROR - 2015-08-24T20:18:24.790Z] Session [f2d53200-4a9c-11e5-a278-e114aab16494] - pa[INFO  - 2015-08-24T20:18:42.717Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting N[INFO  - 2015-08-24T20:18:47.576Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+anonymous function) (https://www.gstatic.com/swiffy/v7.1.1/runtime.js:825)
+[ERROR - 2015-08-24T20:18:24.790Z] Session [f2d53200-4a9c-11e5-a278-e114aab16494] - page.onError - msg: TypeError: 'undefined' is not a constructor (evaluating 'new swiffy.Stage(document.getElementById('swiffycontainer'),
+                    swiffyObject)')
+[ERROR - 2015-08-24T20:18:24.790Z] Session [f2d53200-4a9c-11e5-a278-e114aab16494] - page.onError - stack:
+  (anonymous function) (https://s0.2mdn.net/2658969/1439314066262/10-728x90.html:30)
