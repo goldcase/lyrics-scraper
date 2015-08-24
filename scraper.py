@@ -1,37 +1,40 @@
 #!/usr/bin/python
 
-import sys
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import os
+import errno
 
-BASE_URL = "http://www.azlyrics.com"
-NUMBER_SEGMENT = "/19"
+driver = webdriver.PhantomJS()
+driver.set_window_size(1200, 800)
 
-def build_url(artist):
-    ret = BASE_URL
-
-    if artist[0].isdigit():
-        ret += NUMBER_SEGMENT
-    else:
-        ret += "/" + artist[0]
-    ret += "/" + artist + ".html"
-
-    return ret
-
+# Contract: Expects a file in the same directory called urls.txt
 def get_urls():
     urls = []
-    file = open(sys.argv[1])
+    file = open("urls.txt")
 
-    # Read in each normalized artist, remove newlines, and get the URL.
     for line in file:
-        urls.append(build_url(line.replace("\n", "")))
-    file.close()
+        urls.append(line.replace("\n", ""))
 
     return urls
 
-def write_urls_to_file():
-    file = open("urls.txt", "w")
-    for url in get_urls():
-        file.write(url + "\n")
+# Creates directory if it doesn't exist already.
+# Careful of race conditions.
+def create_folder(path):
+    try:
+        os.makedirs(path)
+    except OSError as exception:
+        if exception.errno != errno.EEXIST:
+            raise
 
-    file.close()
+def scrape_urls():
+    artists = get_urls()
 
-write_urls_to_file()
+    for artist in artists:
+        driver.get(artist)
+        items = driver.find_elements_by_xpath("//div[@id='listAlbum']/a")
+        for item in items:
+            print item.text
+
+scrape_urls()
+
