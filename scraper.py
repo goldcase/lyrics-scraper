@@ -5,8 +5,9 @@ from selenium.webdriver.common.by import By
 import os
 import errno
 
-driver = webdriver.PhantomJS()
-driver.set_window_size(1200, 800)
+def set_up_driver(width = 1200, height = 800):
+    driver = webdriver.PhantomJS()
+    driver.set_window_size(width, height)
 
 # Contract: Expects a file in the same directory called urls.txt
 def get_urls():
@@ -58,4 +59,4 @@ def scrape_lyrics(driver):
         print artist
 
 create_folder("drake")
-scrape_lyrics(driver)
+scrape_lyrics(set_up_driver())
