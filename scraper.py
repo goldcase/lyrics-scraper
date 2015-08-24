@@ -27,17 +27,35 @@ def create_folder(path):
         if exception.errno != errno.EEXIST:
             raise
 
-def scrape_urls():
+def get_artist_from_url(url):
+    return url.split("/")[-1][0:-5]
+
+def scrape_song_lyrics(song_url):
+    pass
+
+def scrape_song_urls(driver):
     artists = get_urls()
+    songs = {}
 
     for artist in artists:
-        songs = []
+        artist_name = get_artist_from_url(artist)
+        temp_songs = []
         driver.get(artist)
         items = driver.find_elements_by_xpath("//div[@id='listAlbum']/a")
         for item in items:
-            songs.append(item.get_attribute("href"))
-        print songs
+            temp_songs.append(item.get_attribute("href"))
 
+        # Add to return dict keyed by artist if content was found
+        if (len(temp_songs) > 0):
+            songs[artist_name] = temp_songs
 
-scrape_urls()
+    return songs
 
+def scrape_lyrics(driver):
+    # Songs is a dict of artist to array of URLs of their songs.
+    songs = scrape_song_urls(driver)
+    for artist in songs:
+        print artist
+
+create_folder("drake")
+scrape_lyrics(driver)
